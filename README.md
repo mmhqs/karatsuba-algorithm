@@ -1,6 +1,6 @@
 # Karatsuba Algorithm
 
-This repo present a Python implementation of the Karastsuba algorithm.
+This repo presents a Python implementation of the Karastsuba algorithm.
 
 ## Who's the guy?
 [Anatoli Alexeievitch Karatsuba](https://pt.wikipedia.org/wiki/Anatoli_Alexeievitch_Karatsuba) was a russian mathematician who created a method to multiply two natural numbers, way faster than the traditional multiplication methods. The called Karastsuba algorithm started a new class of divide and conquer algorithms.

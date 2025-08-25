@@ -82,7 +82,7 @@ The final result of the multiplication `x * y` is obtained by combining `z2`, `z
 
 `x * y = z2 * 10^n + (z1 - z2 - z0) * 10^(n/2) + z0`
 
-**Practical Example (Continued)**
+**Practical example (Continued)**
 Remember: `a` = 56, `b` = 78, `c` = 12, `d` = 34.
 
 Calculate `z2`: 
@@ -116,8 +116,47 @@ With `n` = 4 and `n/2`= 2:
 It works perfectly!
 
 ### Wait, wait! What happens if the numbers are not powers of 2?
+When the number of digits `n` is not a power of 2 (or if the numbers are of different sizes), we simply **add zeros to the left** until the length of both numbers is equal and becomes the next power of 2 greater than the original length.
+
+Adding zeros to the left **does not change the value of the number** (for example, 531 is the same as 0531), but adjusts its representation so that the “divide and conquer” mechanism works smoothly.
+
+Steps for dealing with numbers of any size:
+1. Check the sizes: take the two numbers you want to multiply, `x` and `y`.
+2. Find the maximum length: determine which of the two has more digits. Let this length be `n_max`.
+3. Find the next power of 2: find the smallest power of 2 that is greater than or equal to `n_max`. Let's call this new length `n_final`.
+4. Apply padding: add zeros to the left of both numbers, `x` and `y`, until both have `n_final` digits.
+5. Execute the algorithm: with the numbers already “prepared”, execute the Karatsuba algorithm normally, as if they originally had `n_final` digits.
+
+**Practical example:**
+Let's multiply `x = 981` (3 digits) and `y = 52` (2 digits).
+
+First, let's find the variables.
+<img width="500" alt="Variables" src="images/variables.png" />
+
+Then we apply padding to the left.
+<img width="500" alt="Padding" src="images/padding.png" />
+
+Based on `n = 4`, we find the terms.
+<img width="500" alt="Terms" src="images/terms.png" />
+
+Now, we calculate `z0`, `z1` and `z2`. 
+<img width="500" alt="Three products" src="images/threeProducts.png" />
+
+With `z0`, `z1` and `z2`, we calculate the middle term.
+<img width="500" alt="Middle term" src="images/middleTerm.png" />
+
+And finally, we combine the terms to find the result.
+<img width="500" alt="Result" src="images/result.png" />
 
 ### And what happens if the numbers are odd?
+Good news is: the same procedure applies! If we wanted to multiply 123 by 456, both with 3 digits:
+- The next power of 2 is 4.
+- 123 becomes 0123.
+- 456 becomes 0456.
+
+The algorithm continues with `n = 4`, where `a = 01`, `b = 23`, `c = 04`, `d = 56`.
+
+Therefore, **padding with zeros on the left is the standard technique that makes the Karatsuba algorithm robust and applicable to any pair of integers**, regardless of their number of digits.
 
 ### Complexity and advantages
 - Traditional Method: The complexity is O(n²).
