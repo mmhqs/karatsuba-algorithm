@@ -11,10 +11,10 @@ This repo presents a Python implementation of the Karastsuba algorithm.
 ## The math behind the algorithm
 First of all: the math.
 
-To understand the math behind the algorithm, I did some studying and compiled my research in the [karatsuba-study](docs\karatsuba-study.md) file.
+To understand the math behind the algorithm, I did some studying and compiled my research in the [karatsuba-study](docs/karatsuba-study.md) file.
 
 ## How to run the project in Python 🐍
-The Karatsuba algorithm, implemented in Python, can be found in [main.py](code\main.py) file. You can download it if you want to run it on your computer.
+The Karatsuba algorithm, implemented in Python, can be found in [main.py](code/main.py) file. You can download it if you want to run it on your computer.
 
 This guide assumes you already have Python installed on your computer, ok? ✅
 
