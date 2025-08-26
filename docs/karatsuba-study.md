@@ -2,14 +2,23 @@
 In this file I tried to understand the math behind the Karatsuba algorithm before implementing it in Python or any other programming language.
 
 [1. What's wrong with the traditional multiplying method?](#whats-wrong-with-the-traditional-multiplying-method)
+
 [2. What does Karatsuba do to solve this problem?](#what-does-karatsuba-do-to-solve-this-problem)
+
 [2.1. Step 1 - Breaking down the numbers](#step-1-breaking-down-the-numbers)
+
 [2.2. Step 2 - Traditional (inefficient) multiplication](#step-2-traditional-inefficient-multiplication)
+
 [2.3. Step 3 - Karatsuba's magic](#step-3-karatsubas-magic)
+
 [2.4. Step 4 - Combine the results](#step-4-combine-the-results)
+
 [3. Wait, wait! What happens if the numbers are not powers of 2?](#wait-wait-what-happens-if-the-numbers-are-not-powers-of-2)
+
 [4. And what happens if the numbers are odd?](#and-what-happens-if-the-numbers-are-odd)
+
 [5. Complexity and advantages](#complexity-and-advantages)
+
 [6. Conclusion](#conclusion)
 
 ### What's wrong with the traditional multiplying method?
@@ -131,21 +140,27 @@ Steps for dealing with numbers of any size:
 Let's multiply `x = 981` (3 digits) and `y = 52` (2 digits).
 
 First, let's find the variables.
+
 <img width="500" alt="Variables" src="images/variables.png" />
 
 Then we apply padding to the left.
+
 <img width="500" alt="Padding" src="images/padding.png" />
 
 Based on `n = 4`, we find the terms.
+
 <img width="500" alt="Terms" src="images/terms.png" />
 
 Now, we calculate `z0`, `z1` and `z2`. 
+
 <img width="500" alt="Three products" src="images/threeProducts.png" />
 
 With `z0`, `z1` and `z2`, we calculate the middle term.
+
 <img width="500" alt="Middle term" src="images/middleTerm.png" />
 
 And finally, we combine the terms to find the result.
+
 <img width="500" alt="Result" src="images/result.png" />
 
 ### And what happens if the numbers are odd?
