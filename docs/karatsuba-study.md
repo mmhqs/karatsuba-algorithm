@@ -1,4 +1,4 @@
-## Karatsuba Study
+# Karatsuba study
 In this file I tried to understand the math behind the Karatsuba algorithm before implementing it in Python or any other programming language.
 
 [1. What's wrong with the traditional multiplying method?](#whats-wrong-with-the-traditional-multiplying-method)
@@ -21,18 +21,23 @@ In this file I tried to understand the math behind the Karatsuba algorithm befor
 
 [6. Conclusion](#conclusion)
 
-### What's wrong with the traditional multiplying method?
+--- 
+
+## What's wrong with the traditional multiplying method?
 Imagine you want to multiply two large numbers, `x` and `y`, each with `n` digits. Using the traditional method, you would **multiply each digit** of `x` by each digit of `y`. This requires approximately n² multiplication operations. If the numbers have thousands or millions of digits, the computational cost becomes prohibitive.
 
 For example, to multiply two 1024-digit numbers, the traditional method would require:
 `1024² = 1048576 single-digit multiplications`
 
-### What does Karatsuba do to solve this problem?
+---
+
+## What does Karatsuba do to solve this problem?
 Karatsuba's central idea is to break down the multiplication of two large numbers into smaller multiplications, and instead of performing four smaller multiplications as would be expected, he achieves the result with only three.
 
 Let's go through it step by step.
 
-#### Step 1 - Breaking down the numbers
+
+### Step 1 - Breaking down the numbers
 Suppose we want to multiply two numbers `x` and `y`, each with `n` digits (for simplicity, let's assume that `n` is a power of 2). We can divide each number into two halves:
 
 - `x = a * 10^(n/2) + b`
@@ -53,7 +58,7 @@ Thus, we can rewrite the numbers as:
 `x = 56 * 10^2 + 78`
 `y = 12 * 10^2 + 34`
 
-#### Step 2 - Traditional (inefficient) multiplication
+### Step 2 - Traditional (inefficient) multiplication
 The multiplication `x * y` becomes:
 `x * y = (a * 10^(n/2) + b) * (c * 10^(n/2) + d)`
 `x * y = (a*c) * 10^n + (a*d + b*c) * 10^(n/2) + (b*d)`
@@ -66,7 +71,7 @@ Note that to calculate this, we would need four multiplications of smaller numbe
 
 **This does not improve efficiency!** We are still left with a complexity of O(n²).
 
-#### Step 3 - Karatsuba's magic
+### Step 3 - Karatsuba's magic
 Karatsuba realized that the middle term `(a*d + b*c)` could be calculated in a smarter way, **using only one additional multiplication instead of two**.
 
 He defines three products instead of four:
@@ -86,7 +91,7 @@ Rearranging the equation, we get:
 
 We get the middle term with just one new multiplication (`z1`), reusing the results of `z2` and `z0`.
 
-#### Step 4 - Combine the results
+### Step 4 - Combine the results
 The final result of the multiplication `x * y` is obtained by combining `z2`, `z1`, and `z0` with the appropriate offsets (the powers of 10):
 
 `x * y = z2 * 10^n + (z1 - z2 - z0) * 10^(n/2) + z0`
@@ -124,7 +129,9 @@ With `n` = 4 and `n/2`= 2:
 
 It works perfectly!
 
-### Wait, wait! What happens if the numbers are not powers of 2?
+---
+
+## Wait, wait! What happens if the numbers are not powers of 2?
 When the number of digits `n` is not a power of 2 (or if the numbers are of different sizes), we simply **add zeros to the left** until the length of both numbers is equal and becomes the next power of 2 greater than the original length.
 
 Adding zeros to the left **does not change the value of the number** (for example, 531 is the same as 0531), but adjusts its representation so that the “divide and conquer” mechanism works smoothly.
@@ -163,7 +170,9 @@ And finally, we combine the terms to find the result.
 
 <img width="500" alt="Result" src="images/result.png" />
 
-### And what happens if the numbers are odd?
+---
+
+## And what happens if the numbers are odd?
 Good news is: the same procedure applies! If we wanted to multiply 123 by 456, both with 3 digits:
 - The next power of 2 is 4.
 - 123 becomes 0123.
@@ -173,12 +182,16 @@ The algorithm continues with `n = 4`, where `a = 01`, `b = 23`, `c = 04`, `d = 5
 
 Therefore, **padding with zeros on the left is the standard technique that makes the Karatsuba algorithm robust and applicable to any pair of integers**, regardless of their number of digits.
 
-### Complexity and advantages
+---
+
+## Complexity and advantages
 - Traditional Method: The complexity is O(n²).
 - Karatsuba Algorithm: The complexity is approximately O(n^log2(3)), which is about O(n^1.585).
 
 It may not seem like a big difference, but for numbers with millions of digits, the reduction in computation time is enormous. The Karatsuba algorithm is one of the pillars that make modern cryptography (which depends on operations with very large numbers) feasible.
 
-### Conclusion
+---
+
+## Conclusion
 The Karatsuba algorithm replaces one large multiplication with three smaller multiplications and some additions and subtractions. By applying this logic recursively, it drastically reduces the total number of multiplication operations, making it much more efficient than the school method for large numbers.
 

@@ -1,17 +1,23 @@
 # Karatsuba Algorithm
-
 This repo presents a Python implementation of the Karastsuba algorithm.
+
+[1. Who's the guy?](#whos-the-guy)
+[2. The math behind the algorithm](#the-math-behind-the-algorithm)
+[3. How to run the project in Python 🐍](#how-to-run-the-project-in-python)
+[4. Algorithm analyses](#algorithm-analyses)
+
 
 ## Who's the guy?
 [Anatoli Alexeievitch Karatsuba](https://pt.wikipedia.org/wiki/Anatoli_Alexeievitch_Karatsuba) was a russian mathematician who created a method to multiply two natural numbers, way faster than the traditional multiplication methods. The called Karastsuba algorithm started a new class of divide and conquer algorithms.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ca479f58-79c6-4e03-8287-50e0196cb080" />
 
-
 ## The math behind the algorithm
 First of all: the math.
 
 To understand the math behind the algorithm, I did some studying and compiled my research in the [karatsuba-study](docs/karatsuba-study.md) file.
+
+After studying the Karatsuba algorithm a little, I implemented the algorithm in Python. I also **added comments to the code** to make it easier to understand each step of the algorithm.
 
 ## How to run the project in Python 🐍
 The Karatsuba algorithm, implemented in Python, can be found in [main.py](code/main.py) file. You can download it if you want to run it on your computer.
@@ -34,3 +40,6 @@ Once you are in the correct folder, you can run the Python script. Type python f
 `python main.py`
 
 Enjoy your multiplications!
+
+## Algorithm analyses
+After studying the algorithm and implementing the code in Python, it is time to understand the complexity of the algorithm.
