@@ -1,8 +1,6 @@
 # Algorithm analyses
 Now let's analyze the complexity of the Karatsuba algorithm, implemented in [main.py](code/main.py).
 
-<img width="400" alt="Complexity summary" src="images/complexitySummary.png" style="border-radius: 10px"/>
-
 Follow the links below!
 
 [1. Cyclomatic complexity analysis](#cyclomatic-complexity-analysis)
@@ -61,6 +59,8 @@ Using the formula `𝑀 = 𝐸 − 𝑁 + 2𝑃`, let's calculate the complexity
 A cyclomatic complexity of 3 means that **there are three linearly independent paths** through our function. In practical terms, this indicates a function with low, manageable complexity.
 
 This is the most valuable insight from the metric. A complexity of 3 tells you that **we need at least three test cases** to ensure coverage of all independent paths in your code.
+
+---
 
 ## Asymptotic complexity analysis
 This measures the performance and scalability of an algorithm. Think of it as a "scalability rating" for your algorithm. It tells you if it will be fast and efficient or slow and resource-intensive as the problem size grows.

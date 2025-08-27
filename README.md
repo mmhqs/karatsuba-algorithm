@@ -16,12 +16,16 @@ This repo presents a Python implementation of the Karastsuba algorithm.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ca479f58-79c6-4e03-8287-50e0196cb080" style="border-radius: 10px" />
 
+---
+
 ## The math behind the algorithm
 First of all: the math.
 
 To understand the math behind the algorithm, I did some studying and compiled my research in the [karatsuba-study](docs/karatsuba-study.md) file.
 
 After studying the Karatsuba algorithm a little, I implemented the algorithm in Python. I also **added comments to the code** to make it easier to understand each step of the algorithm.
+
+---
 
 ## How to run the project in Python 🐍
 The Karatsuba algorithm, implemented in Python, can be found in [main.py](code/main.py) file. You can download it if you want to run it on your computer.
@@ -44,6 +48,8 @@ Once you are in the correct folder, you can run the Python script. Type python f
 `python main.py`
 
 Enjoy your multiplications!
+
+---
 
 ## Algorithm analysis
 After studying the algorithm and implementing the code in Python, it is time to understand the complexity of the algorithm! You can find the full analysis in the [karatsuba-analysis](docs/karatsuba-analysis.md) file.
