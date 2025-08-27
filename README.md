@@ -9,6 +9,7 @@ This repo presents a Python implementation of the Karastsuba algorithm.
 
 [4. Algorithm analyses](#algorithm-analyses)
 
+---
 
 ## Who's the guy?
 [Anatoli Alexeievitch Karatsuba](https://pt.wikipedia.org/wiki/Anatoli_Alexeievitch_Karatsuba) was a russian mathematician who created a method to multiply two natural numbers, way faster than the traditional multiplication methods. The called Karastsuba algorithm started a new class of divide and conquer algorithms.
@@ -44,5 +45,7 @@ Once you are in the correct folder, you can run the Python script. Type python f
 
 Enjoy your multiplications!
 
-## Algorithm analyses
-After studying the algorithm and implementing the code in Python, it is time to understand the complexity of the algorithm.
+## Algorithm analysis
+After studying the algorithm and implementing the code in Python, it is time to understand the complexity of the algorithm! You can find the full analysis in the [karatsuba-analysis](docs/karatsuba-analysis.md) file.
+
+<img width="500" alt="image" src="docs/images/complexity.PNG" />
