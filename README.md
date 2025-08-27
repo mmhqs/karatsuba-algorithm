@@ -2,8 +2,11 @@
 This repo presents a Python implementation of the Karastsuba algorithm.
 
 [1. Who's the guy?](#whos-the-guy)
+
 [2. The math behind the algorithm](#the-math-behind-the-algorithm)
+
 [3. How to run the project in Python 🐍](#how-to-run-the-project-in-python)
+
 [4. Algorithm analyses](#algorithm-analyses)
 
 

@@ -5,14 +5,6 @@ In this file I tried to understand the math behind the Karatsuba algorithm befor
 
 [2. What does Karatsuba do to solve this problem?](#what-does-karatsuba-do-to-solve-this-problem)
 
-[2.1. Step 1 - Breaking down the numbers](#step-1-breaking-down-the-numbers)
-
-[2.2. Step 2 - Traditional (inefficient) multiplication](#step-2-traditional-inefficient-multiplication)
-
-[2.3. Step 3 - Karatsuba's magic](#step-3-karatsubas-magic)
-
-[2.4. Step 4 - Combine the results](#step-4-combine-the-results)
-
 [3. Wait, wait! What happens if the numbers are not powers of 2?](#wait-wait-what-happens-if-the-numbers-are-not-powers-of-2)
 
 [4. And what happens if the numbers are odd?](#and-what-happens-if-the-numbers-are-odd)
