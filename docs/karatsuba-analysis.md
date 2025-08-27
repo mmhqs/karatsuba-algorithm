@@ -1,7 +1,5 @@
-# Algorithm analyses
+# Algorithm analysis
 Now let's analyze the complexity of the Karatsuba algorithm, implemented in [main.py](code/main.py).
-
-Follow the links below!
 
 [1. Cyclomatic complexity analysis](#cyclomatic-complexity-analysis)
 
